@@ -1,0 +1,38 @@
+==>PUT → Update or Create a resource at a specific URL
+
+Idempotent: Sending the same PUT request multiple times results in the same outcome.
+
+Client decides the resource location (URL).
+
+Commonly used to update an existing resource.
+
+Can also create a resource if it doesn’t exist, but only at the specified URL.
+
+Example: Update a user’s profile
+PUT /users/123
+Content-Type: application/json
+{
+  "name": "Abhi",
+  "age": 24
+}
+Meaning:
+"Store this user at /users/123
+
+==>POST → Create a resource under a collection
+
+Not idempotent: Calling POST multiple times creates additional resources.
+
+Server decides the location (URL) of the new resource.
+
+Used for creating resources or performing actions that do not fit CRUD neatly.
+
+Example: Create a new user
+POST /users
+Content-Type: application/json
+{
+  "name": "Abhi",
+  "age": 24
+}
+Server response:
+201 Created
+Location: /users/456
