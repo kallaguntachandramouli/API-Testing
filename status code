@@ -1,0 +1,63 @@
+1xx — Informational Responses
+    These indicate that the request was received and the process is continuing.
+Common 1xx Codes
+==>100 Continue
+The server received the request headers and the client can proceed with the body.
+==>101 Switching Protocols
+Server is switching to another protocol (e.g., WebSocket).
+==>102 Processing
+Server has received the request but is still processing it.
+
+-->2xx — Success Responses
+   These mean that the request was successfully received, understood, and accepted.
+Common 2xx Codes
+==>200 OK
+Request succeeded; response body contains the result.
+==>201 Created
+A new resource was created (often after a POST).
+==>202 Accepted
+Request accepted for processing but not completed yet.
+==>204 No Content
+Request succeeded but no content returned (common after DELETE).
+
+ 3xx — Redirection Responses
+  These indicate that the client must take additional action (usually a redirect).
+Common 3xx Codes
+==>301 Moved Permanently
+Resource has a permanent new URL; search engines update links.
+==>302 Found
+Temporary redirect; original URL may still work later.
+==>304 Not Modified
+Resource not changed; client should use cached version.
+==>307 Temporary Redirect
+Same as 302 but does not allow method change.
+
+-->4xx — Client Error Responses
+   These indicate problems with the request from the client side.
+Common 4xx Codes
+==>400 Bad Request
+Malformed request syntax or invalid data.
+==>401 Unauthorized
+Authentication required or incorrect credentials.
+==>403 Forbidden
+Client authenticated but not allowed to access resource.
+==>404 Not Found
+Resource does not exist on the server.
+==>409 Conflict
+Request conflicts with the current state of the resource.
+==>429 Too Many Requests
+Client has sent too many requests (rate limiting).
+
+--> 5xx — Server Error Responses
+    These indicate that the server encountered an error while processing the request.
+Common 5xx Codes
+500 Internal Server Error
+==>Generic server failure.
+501 Not Implemented
+==>Server doesn't support the requested method.
+502 Bad Gateway
+==>Upstream server returned an invalid response.
+503 Service Unavailable
+==>Server is down or overloaded; try again later.
+504 Gateway Timeout
+==>Upstream server did not respond in time.
