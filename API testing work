@@ -1,0 +1,21 @@
+API (Application Programming Interface) is a bridge that allows two software applications to communicate with each other.
+   It defines how one system can request data from another and how the other should respond.
+How API works:
+  1. Your app sends a request to the API.
+  2. API goes to the server and fetches the data.
+  3. Server sends a response back.
+Example:
+   ==>You build a mobile app that shows today’s weather for Chennai.
+How it works using an API:
+1. Your app sends a request like:
+==>GET https://api.weather.com/today?city=Chennai
+2. API receives the request and asks the weather server for data.
+3. Server returns info like:
+{
+  "city": "Chennai",
+  "temperature": "18°C",
+  "condition": "rain"
+}
+4. Your app displays the weather.
+Summary:
+Your app never stores weather data — it fetches it from the API.
